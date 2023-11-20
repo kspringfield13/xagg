@@ -1,0 +1,5 @@
+# ignore all logs
+*.log
+
+# ignore vision test
+open_vision_test.py
