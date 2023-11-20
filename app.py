@@ -191,9 +191,20 @@ f_column, s_column, t_column, fr_column = st.columns((4.5,1.5,1.5,1.5))
 with f_column:
 
     st.image(logo, width=120)
-
-    # st.markdown('<h1 style="color: purple;">Suzieq</h1>',unsafe_allow_html=True)
+    st.markdown(
+    """
     
+    <style>
+        @media screen and (max-width:640px) {
+            div.st-emotion-cache-1kyxreq.e115fcil2 {
+                width: 150px !important;
+            }
+        }
+    </style>
+    """,
+        unsafe_allow_html=True,
+    )
+
 with s_column:
 
     #S & P 500
@@ -213,11 +224,11 @@ with s_column:
             render_svg("""<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32"><path d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16zm6.5-12.846c0-2.523-1.576-3.948-5.263-4.836v-4.44c1.14.234 2.231.725 3.298 1.496l1.359-2.196a9.49 9.49 0 00-4.56-1.776V6h-2.11v1.355c-3.032.234-5.093 1.963-5.093 4.486 0 2.64 1.649 3.925 5.19 4.813v4.58c-1.577-.234-2.886-.935-4.269-2.01L9.5 21.35a11.495 11.495 0 005.724 2.314V26h2.11v-2.313c3.08-.257 5.166-1.963 5.166-4.533zm-7.18-5.327c-1.867-.537-2.327-1.168-2.327-2.15 0-1.027.8-1.845 2.328-1.962zm4.318 5.49c0 1.122-.873 1.893-2.401 2.01v-4.229c1.892.538 2.401 1.168 2.401 2.22z" fill="#fff" fill-rule="evenodd"/></svg>""")
             
         with trc:
-            st.markdown(f'<div style="text-align: right; color: white; font-weight: bold; font-size: 16px;">${price:,.2f}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div style="text-align: right; color: white; font-size: 16px;">{name}</div>', unsafe_allow_html=True)
 
         tlc_2, trc_2 = st.columns((5,5),gap="small")
         with tlc_2:
-            st.markdown(f'<div style="text-align: left; color: white; font-weight: bold; font-size: 16px;">{name}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div style="text-align: left; color: white; font-weight: bold; font-size: 16px;">${price:,.2f}</div>', unsafe_allow_html=True)
             
         with trc_2:
             st.markdown(f'<div style="text-align: right; color: {color}; font-weight: bold; font-size: 16px;">{abs(change_percent):.2f}%  {arrow}</div>', unsafe_allow_html=True)
@@ -229,6 +240,19 @@ with s_column:
             background: #1a1919; 
             border-radius: 10px 10px 10px 10px;
             padding: 8px 10px 5px 10px;
+        }
+
+        @media screen and (max-width:640px) {
+            div.st-emotion-cache-1l269bu:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+                width: 100%;
+                line-height: 0px;
+            }
+        }
+
+        @media screen and (max-width:640px) {
+            div.st-emotion-cache-nahz7x.e1nzilvr5:nth-child(1) {
+                float: inherit;
+            }
         }
     </style>
     """,
@@ -254,11 +278,11 @@ with t_column:
             render_svg("""<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g fill="none" fill-rule="evenodd"><circle cx="16" cy="16" r="16" fill="#F7931A"/><path fill="#FFF" fill-rule="nonzero" d="M23.189 14.02c.314-2.096-1.283-3.223-3.465-3.975l.708-2.84-1.728-.43-.69 2.765c-.454-.114-.92-.22-1.385-.326l.695-2.783L15.596 6l-.708 2.839c-.376-.086-.746-.17-1.104-.26l.002-.009-2.384-.595-.46 1.846s1.283.294 1.256.312c.7.175.826.638.805 1.006l-.806 3.235c.048.012.11.03.18.057l-.183-.045-1.13 4.532c-.086.212-.303.531-.793.41.018.025-1.256-.313-1.256-.313l-.858 1.978 2.25.561c.418.105.828.215 1.231.318l-.715 2.872 1.727.43.708-2.84c.472.127.93.245 1.378.357l-.706 2.828 1.728.43.715-2.866c2.948.558 5.164.333 6.097-2.333.752-2.146-.037-3.385-1.588-4.192 1.13-.26 1.98-1.003 2.207-2.538zm-3.95 5.538c-.533 2.147-4.148.986-5.32.695l.95-3.805c1.172.293 4.929.872 4.37 3.11zm.535-5.569c-.487 1.953-3.495.96-4.47.717l.86-3.45c.975.243 4.118.696 3.61 2.733z"/></g></svg>""")
 
         with trc:
-            st.markdown(f'<div style="text-align: right; color: white; font-weight: bold; font-size: 16px;">${price:,.2f}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div style="text-align: right; color: white; font-size: 16px;">{name}</div>', unsafe_allow_html=True)
 
         tlc_2, trc_2 = st.columns((5,5),gap="small")
         with tlc_2:
-            st.markdown(f'<div style="text-align: left; color: white; font-weight: bold; font-size: 16px;">{name}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div style="text-align: left; color: white; font-weight: bold; font-size: 16px;">${price:,.2f}</div>', unsafe_allow_html=True)
             
         with trc_2:
             st.markdown(f'<div style="text-align: right; color: {color}; font-weight: bold; font-size: 16px;">{abs(change_percent):.2f}%  {arrow}</div>', unsafe_allow_html=True)
@@ -271,6 +295,19 @@ with t_column:
             border-radius: 10px 10px 10px 10px;
             padding: 8px 10px 5px 10px;
         }
+
+        @media screen and (max-width:640px) {
+            div.st-emotion-cache-1l269bu:nth-child(3) > div:nth-child(1) > div:nth-child(1) {
+                width: 100%;
+                line-height: 0px;
+            }
+        }
+
+        @media screen and (max-width:640px) {
+            div.st-emotion-cache-1wmy9hl.e1f1d6gn0:nth-child(3) {
+            }
+        }
+
     </style>
     """,
         unsafe_allow_html=True,
@@ -295,11 +332,11 @@ with fr_column:
             render_svg("""<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g fill="none" fill-rule="evenodd"><circle cx="16" cy="16" r="16" fill="#627EEA"/><g fill="#FFF" fill-rule="nonzero"><path fill-opacity=".602" d="M16.498 4v8.87l7.497 3.35z"/><path d="M16.498 4L9 16.22l7.498-3.35z"/><path fill-opacity=".602" d="M16.498 21.968v6.027L24 17.616z"/><path d="M16.498 27.995v-6.028L9 17.616z"/><path fill-opacity=".2" d="M16.498 20.573l7.497-4.353-7.497-3.348z"/><path fill-opacity=".602" d="M9 16.22l7.498 4.353v-7.701z"/></g></g></svg>""")
             
         with trc:
-            st.markdown(f'<div style="text-align: right; color: white; font-weight: bold; font-size: 16px;">${price:,.2f}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div style="text-align: right; color: white; font-size: 16px;">{name}</div>', unsafe_allow_html=True)
 
         tlc_2, trc_2 = st.columns((5,5),gap="small")
         with tlc_2:
-            st.markdown(f'<div style="text-align: left; color: white; font-weight: bold; font-size: 16px;">{name}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div style="text-align: left; color: white; font-weight: bold; font-size: 16px;">${price:,.2f}</div>', unsafe_allow_html=True)
             
         with trc_2:
             st.markdown(f'<div style="text-align: right; color: {color}; font-weight: bold; font-size: 16px;">{abs(change_percent):.2f}%  {arrow}</div>', unsafe_allow_html=True)
@@ -312,6 +349,19 @@ with fr_column:
             border-radius: 10px 10px 10px 10px;
             padding: 8px 10px 5px 10px;
         }
+
+        @media screen and (max-width:640px) {
+            div.st-emotion-cache-1l269bu:nth-child(4) > div:nth-child(1) > div:nth-child(1) {
+                width: 100%;
+                line-height: 0px;
+            }
+        }
+
+        @media screen and (max-width:640px) {
+            div.st-emotion-cache-1wmy9hl.e1f1d6gn0:nth-child(4) {
+            }
+        }
+
     </style>
     """,
         unsafe_allow_html=True,
@@ -321,6 +371,7 @@ st.write("##")
 st.write("##")
 
 # FEATURED STORIES
+
 left_column, middle_column, right_column = st.columns(3, gap="small")
 with left_column:
     
