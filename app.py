@@ -228,7 +228,7 @@ with s_column:
         div.st-emotion-cache-1l269bu:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
             background: #1a1919; 
             border-radius: 10px 10px 10px 10px;
-            padding: 5px 8px 5px 8px;
+            padding: 8px 10px 5px 10px;
         }
     </style>
     """,
@@ -269,7 +269,7 @@ with t_column:
         div.st-emotion-cache-1l269bu:nth-child(3) > div:nth-child(1) > div:nth-child(1) {
             background: #1a1919; 
             border-radius: 10px 10px 10px 10px;
-            padding: 5px 8px 5px 8px;
+            padding: 8px 10px 5px 10px;
         }
     </style>
     """,
@@ -310,7 +310,7 @@ with fr_column:
         div.st-emotion-cache-1l269bu:nth-child(4) > div:nth-child(1) > div:nth-child(1) {
             background: #1a1919; 
             border-radius: 10px 10px 10px 10px;
-            padding: 5px 8px 5px 8px;
+            padding: 8px 10px 5px 10px;
         }
     </style>
     """,
@@ -517,9 +517,9 @@ with right_column:
 st.write("##")
 
 # TABS
-business, finance, tech= st.tabs(["Business", "Finance", "Tech"])
+headlines, memes, financials = st.tabs(["Headlines", "Memes", "Financials"])
 
-with business:
+with headlines:
    
     with st.container():
 
@@ -578,7 +578,7 @@ with business:
                     st.markdown(f"[{business_right_headline}]({business_right_url})", unsafe_allow_html=True)
                     st.text("")  # Adds a line break after each headline
 
-with finance:
+with memes:
 
     with st.container():
 
@@ -637,7 +637,7 @@ with finance:
                     st.markdown(f"[{finance_right_headline}]({finance_right_url})", unsafe_allow_html=True)
                     st.text("")  # Adds a line break after each headline
 
-with tech:
+with financials:
 
     with st.container():
 
